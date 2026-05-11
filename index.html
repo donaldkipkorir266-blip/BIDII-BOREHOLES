@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BIDII BOREHOLE DRILLING & WATER SOLUTIONS - Reliable borehole drilling, well digging, and hydrological surveys across Kenya.">
+    <meta name="keywords" content="Borehole Drilling Kenya, Hydrological Surveys, Water Solutions, Well Digging, Engineering Kenya, Bidii Boreholes">
+    <meta name="author" content="BIDII BOREHOLE DRILLING & WATER SOLUTIONS">
+    <meta property="og:title" content="BIDII BOREHOLE DRILLING & WATER SOLUTIONS">
+    <meta property="og:description" content="Premium engineering and infrastructure company trusted across Kenya for reliable water solutions.">
+    <meta property="og:type" content="website">
+    
+    <title>BIDII BOREHOLE DRILLING & WATER SOLUTIONS</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ================= CSS VARIABLES & RESET ================= */
+        :root {
+            --navy: #0A192F;
+            --navy-light: #112240;
+            --aqua: #00B4D8;
+            --aqua-dark: #0077B6;
+            --white: #FFFFFF;
+            --gray-light: #F3F4F6;
+            --text-dark: #333333;
+            --text-gray: #6B7280;
+            --accent: #FFC107;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* ================= REUSABLE COMPONENTS ================= */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding { padding: 6rem 0; }
+        .bg-gray { background-color: var(--gray-light); }
+        .bg-navy { background-color: var(--navy); color: var(--white); }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .bg-navy .section-title h2 { color: var(--white); }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--aqua);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bg-navy .section-title p { color: #A0AABF; }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--aqua), var(--aqua-dark));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.5);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        /* ================= PRELOADER & SCROLL PROGRESS ================= */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--navy);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: var(--aqua);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%; height: 4px;
+            background: var(--aqua);
+            z-index: 10000;
+            transition: width 0.1s;
+        }
+
+        /* ================= NAVBAR ================= */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 1.5rem 0;
+            background: transparent;
+        }
+
+        header.scrolled {
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i { color: var(--aqua); font-size: 1.8rem; }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; left: 0;
+            width: 0; height: 2px;
+            background: var(--aqua);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: var(--aqua); }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* ================= HERO SECTION ================= */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1541888052445-779836109f23?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.6));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h1 span { color: var(--aqua); }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #E2E8F0;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            z-index: 1;
+        }
+
+        /* ================= SERVICES SECTION ================= */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 0;
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.05), transparent);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(0, 180, 216, 0.3);
+        }
+
+        .service-card:hover::before { height: 100%; }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 180, 216, 0.1);
+            color: var(--aqua-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--aqua);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-price {
+            display: inline-block;
+            background: var(--gray-light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--aqua-dark);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .service-link {
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-link { color: var(--aqua); gap: 10px; }
+
+        /* ================= TRUST/STATS SECTION ================= */
+        .stats-section {
+            background: url('https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&q=80&w=1920') center/cover fixed;
+            position: relative;
+            padding: 5rem 0;
+            color: var(--white);
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 25, 47, 0.9);
+        }
+
+        .stats-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item i {
+            font-size: 3rem;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stat-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #A0AABF;
+        }
+        
+        .trust-badges {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 3rem;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.05);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .badge i { color: var(--accent); }
+
+        /* ================= ABOUT SECTION ================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img { transform: scale(1.05); }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -20px; right: -20px;
+            background: var(--aqua);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 5px solid var(--white);
+        }
+
+        .experience-badge h3 { font-size: 2.5rem; line-height: 1; margin-bottom: 5px; }
+        .experience-badge p { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
+
+        .about-content h3 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .about-features i { color: var(--aqua); }
+
+        /* ================= PROJECTS GALLERY ================= */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 25, 47, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        .gallery-overlay i {
+            font-size: 2.5rem;
+            color: var(--aqua);
+            margin-bottom: 1rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.2rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.1s;
+        }
+
+        .gallery-item:hover .gallery-overlay i,
+        .gallery-item:hover .gallery-overlay h4 { transform: translateY(0); }
+
+        /* ================= BOOKING SYSTEM ================= */
+        .booking-container {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+
+        .booking-info {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--white);
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .booking-info h3 { font-size: 2rem; margin-bottom: 1rem; }
+        .booking-info p { color: #A0AABF; margin-bottom: 2rem; }
+        
+        .booking-steps { display: flex; flex-direction: column; gap: 1.5rem; }
+        .step { display: flex; align-items: flex-start; gap: 15px; }
+        .step-icon {
+            width: 40px; height: 40px;
+            background: rgba(0, 180, 216, 0.2);
+            color: var(--aqua);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; flex-shrink: 0;
+        }
+        .step h4 { font-size: 1.1rem; margin-bottom: 5px; }
+        .step p { font-size: 0.9rem; margin-bottom: 0; }
+
+        .booking-form-wrap { padding: 4rem 3rem; }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width { grid-column: span 2; }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--aqua);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.1);
+        }
+
+        select.form-control { cursor: pointer; appearance: none; }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+
+        /* ================= TESTIMONIALS ================= */
+        .testimonials-slider {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 2rem 1rem;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        
+        .testimonials-slider::-webkit-scrollbar { display: none; }
+
+        .testimonial-card {
+            min-width: 350px;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            scroll-snap-align: center;
+            position: relative;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px; right: 20px;
+            font-size: 3rem;
+            color: rgba(0, 180, 216, 0.1);
+        }
+
+        .stars { color: var(--accent); margin-bottom: 1rem; font-size: 0.9rem; }
+        .testimonial-text { font-style: italic; color: var(--text-gray); margin-bottom: 1.5rem; }
+        
+        .client-info { display: flex; align-items: center; gap: 15px; }
+        .client-avatar {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: var(--gray-light);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; color: var(--navy); font-size: 1.2rem;
+        }
+        .client-details h4 { color: var(--navy); font-size: 1rem; }
+        .client-details p { font-size: 0.85rem; color: var(--text-gray); }
+
+        /* ================= CONTACT SECTION ================= */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+
+        .contact-cards { display: flex; flex-direction: column; gap: 1.5rem; }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+        .contact-icon {
+            width: 50px; height: 50px;
+            background: rgba(0, 180, 216, 0.1);
+            color: var(--aqua-dark);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; flex-shrink: 0;
+        }
+
+        .contact-card h4 { font-size: 1.1rem; color: var(--navy); margin-bottom: 5px; }
+        .contact-card p, .contact-card a { color: var(--text-gray); font-size: 0.95rem; }
+        .contact-card a:hover { color: var(--aqua); }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .map-container iframe {
+            width: 100%; height: 100%; border: none;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: var(--navy-light);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about p { color: #A0AABF; margin-top: 1.5rem; font-size: 0.95rem; }
+
+        .social-icons { display: flex; gap: 15px; margin-top: 1.5rem; }
+        .social-icons a {
+            width: 40px; height: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        .social-icons a:hover { background: var(--aqua); transform: translateY(-3px); }
+
+        .footer-links h4 { font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px; }
+        .footer-links h4::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 40px; height: 2px; background: var(--aqua);
+        }
+
+        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links ul li a {
+            color: #A0AABF; transition: var(--transition);
+            display: inline-block;
+        }
+        .footer-links ul li a:hover { color: var(--aqua); transform: translateX(5px); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #A0AABF;
+            font-size: 0.9rem;
+        }
+
+        /* ================= FLOATING ELEMENTS ================= */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px; left: 30px;
+            width: 60px; height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            width: 50px; height: 50px;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+            opacity: 0; visibility: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .back-to-top.active { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--aqua); transform: translateY(-5px); }
+
+        /* ================= MODALS ================= */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 25, 47, 0.9);
+            z-index: 10000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal.active { opacity: 1; visibility: visible; }
+
+        .modal-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .modal.active .modal-content { transform: translateY(0); }
+
+        .modal-icon {
+            font-size: 4rem; color: #25D366; margin-bottom: 1rem;
+        }
+
+        .modal-close {
+            margin-top: 2rem;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.5rem 2rem;
+            border: none; border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 10000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: var(--transition);
+        }
+        .lightbox.active { opacity: 1; visibility: visible; }
+        .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 5px; }
+        .lightbox-close {
+            position: absolute; top: 20px; right: 30px;
+            color: white; font-size: 2rem; cursor: pointer;
+        }
+
+        /* ================= ANIMATIONS & UTILS ================= */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* ================= MEDIA QUERIES ================= */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3rem; }
+            .about-grid, .booking-container { grid-template-columns: 1fr; }
+            .booking-info { padding: 3rem 2rem; }
+            .experience-badge { bottom: 20px; right: 20px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 80%; height: 100vh;
+                background: var(--navy);
+                flex-direction: column;
+                justify-content: center;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { right: 0; }
+            .mobile-menu-btn { display: block; }
+            
+            .hero h1 { font-size: 2.2rem; }
+            .hero-btns { flex-direction: column; width: 100%; }
+            .btn { width: 100%; }
+            
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: 1; }
+            
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            
+            .section-padding { padding: 4rem 0; }
+            .section-title h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-droplet"></i> BIDII
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="mobile-menu-btn" id="mobile-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Reliable Borehole Drilling & <span>Water Solutions</span> Across Kenya</h1>
+                <p>Professional engineering, state-of-the-art machinery, and experienced teams delivering clean water access to homes, farms, and industries nationwide.</p>
+                <div class="hero-btns">
+                    <a href="#booking" class="btn btn-primary">Book Site Visit</a>
+                    <a href="https://wa.me/254746145678?text=Hello+BIDII+BOREHOLE+DRILLING+%26+WATER+SOLUTIONS%2C+I+would+like+to+inquire+about+your+services." target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <a href="#services" class="scroll-indicator"><i class="fa-solid fa-chevron-down"></i></a>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section class="section-padding bg-gray" id="services">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Our Premium Services</h2>
+                <p>Comprehensive water and engineering solutions tailored for Kenyan terrains with upfront, transparent pricing.</p>
+            </div>
+            
+            <div class="services-grid" id="pricing">
+                <!-- Service 1 -->
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h3>Hydrological Surveys</h3>
+                    <div class="service-price">KSh 35,000</div>
+                    <p>Professional underground water mapping using advanced geological tools to pinpoint the best drilling location with high water yield accuracy.</p>
+                    <a href="#booking" class="service-link">Book Survey <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fa-solid fa-truck-droplet"></i></div>
+                    <h3>Borehole Drilling</h3>
+                    <div class="service-price">KSh 5,500 - 7,000 / Metre</div>
+                    <p>Heavy-duty rotary drilling for deep boreholes. Includes casing, gravel packing, and test pumping. Ideal for commercial and large agricultural use.</p>
+                    <a href="#booking" class="service-link">Request Quote <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fa-solid fa-person-digging"></i></div>
+                    <h3>Well Digging Services</h3>
+                    <div class="service-price">KSh 800 - 3,000 / Foot</div>
+                    <p>Expert shallow well excavation and construction using manual and mechanical methods, perfect for domestic and small farm irrigation.</p>
+                    <a href="#booking" class="service-link">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <h3>Water Consultation</h3>
+                    <div class="service-price">Custom Rates</div>
+                    <p>Permit applications (WRA, NEMA), pump installations, solar pumping systems sizing, and water quality testing & purification.</p>
+                    <a href="https://wa.me/254746145678" target="_blank" class="service-link">Consult Expert <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <i class="fa-solid fa-check-double"></i>
+                    <div class="stat-number" data-target="850">0</div>
+                    <div class="stat-text">Projects Completed</div>
+                </div>
+                <div class="stat-item reveal">
+                    <i class="fa-solid fa-map"></i>
+                    <div class="stat-number" data-target="47">0</div>
+                    <div class="stat-text">Counties Served</div>
+                </div>
+                <div class="stat-item reveal">
+                    <i class="fa-solid fa-users"></i>
+                    <div class="stat-number" data-target="1200">0</div>
+                    <div class="stat-text">Happy Clients</div>
+                </div>
+                <div class="stat-item reveal">
+                    <i class="fa-solid fa-clock"></i>
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-text">Hour Support</div>
+                </div>
+            </div>
+            
+            <div class="trust-badges reveal">
+                <div class="badge"><i class="fa-solid fa-shield-halved"></i> Trusted Workmanship</div>
+                <div class="badge"><i class="fa-solid fa-bolt"></i> Fast Response</div>
+                <div class="badge"><i class="fa-solid fa-globe"></i> Countrywide Service</div>
+                <div class="badge"><i class="fa-solid fa-tag"></i> Affordable Rates</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-padding" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=800" alt="Engineers working">
+                    <div class="experience-badge">
+                        <h3>15+</h3>
+                        <p>Years<br>Experience</p>
+                    </div>
+                </div>
+                <div class="about-content reveal">
+                    <h2 style="color: var(--aqua); font-size: 1.2rem; text-transform: uppercase; margin-bottom: 10px; font-family: 'Inter', sans-serif;">Why Choose Us</h2>
+                    <h3>Serious Engineering Expertise for Kenyan Water Needs</h3>
+                    <p>At BIDII BOREHOLE DRILLING & WATER SOLUTIONS, we don't just drill; we engineer sustainable water systems. We understand the complex geology of Kenya, from the coastal aquifers to the deep volcanic rocks of the Rift Valley.</p>
+                    <p>Our customer-first approach guarantees transparency in pricing, adherence to strict safety standards, and the deployment of high-end, reliable machinery to ensure your project is completed on time and within budget.</p>
+                    
+                    <ul class="about-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Modern Drilling Rigs</li>
+                        <li><i class="fa-solid fa-circle-check"></i> NEMA Certified</li>
+                        <li><i class="fa-solid fa-circle-check"></i> WRA Registered</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Professional Geologists</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Quality Material Use</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Nationwide Operations</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Contact Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Gallery Section -->
+    <section class="section-padding bg-gray" id="projects">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Our Recent Projects</h2>
+                <p>Visual proof of our capability. Browse through our recently completed commercial, agricultural, and domestic water infrastructure projects across Kenya.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Image 1 -->
+                <div class="gallery-item reveal gallery-img" data-src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=600" alt="Piping installation">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <h4>Commercial Piping</h4>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="gallery-item reveal gallery-img" data-src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&q=80&w=600" alt="Hydrological Survey">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <h4>Hydrological Survey</h4>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="gallery-item reveal gallery-img" data-src="https://images.unsplash.com/photo-1585422894576-a4f5c9e2b027?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1585422894576-a4f5c9e2b027?auto=format&fit=crop&q=80&w=600" alt="Water Pumping">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <h4>High Yield Pump Test</h4>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="gallery-item reveal gallery-img" data-src="https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&q=80&w=600" alt="Heavy Machinery">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <h4>Site Preparation</h4>
+                    </div>
+                </div>
+                <!-- Image 5 -->
+                <div class="gallery-item reveal gallery-img" data-src="https://images.unsplash.com/photo-1541888052445-779836109f23?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1541888052445-779836109f23?auto=format&fit=crop&q=80&w=600" alt="Industrial Work">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <h4>Deep Drilling Rig</h4>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="gallery-item reveal gallery-img" data-src="https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?auto=format&fit=crop&q=80&w=600" alt="Water Access">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <h4>Community Water Project</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking System -->
+    <section class="section-padding bg-navy" id="booking">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Book A Site Visit</h2>
+                <p>Ready to start your water project? Fill out the form below and our engineering team will get back to you within 24 hours to schedule a consultation.</p>
+            </div>
+            
+            <div class="booking-container reveal">
+                <div class="booking-info">
+                    <h3>How It Works</h3>
+                    <p>We've streamlined our process to ensure fast deployment and reliable execution.</p>
+                    
+                    <div class="booking-steps">
+                        <div class="step">
+                            <div class="step-icon">1</div>
+                            <div>
+                                <h4>Submit Request</h4>
+                                <p>Provide your location and water needs.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">2</div>
+                            <div>
+                                <h4>Expert Consultation</h4>
+                                <p>We discuss options and send an initial quote.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">3</div>
+                            <div>
+                                <h4>Site Survey</h4>
+                                <p>Our geologists map the best drilling spots.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">4</div>
+                            <div>
+                                <h4>Execution</h4>
+                                <p>Drilling, equipping, and handing over.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-form-wrap" style="background: var(--white); color: var(--navy);">
+                    <form id="bookingForm">
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <input type="text" id="fullName" class="form-control" placeholder="Full Name / Company Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="location" class="form-control" placeholder="Project Location (County/Town)" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <select id="service" class="form-control" required>
+                                    <option value="" disabled selected>Select Service Needed...</option>
+                                    <option value="survey">Hydrological Survey (KSh 35,000)</option>
+                                    <option value="borehole">Borehole Drilling</option>
+                                    <option value="well">Well Digging</option>
+                                    <option value="consultation">General Consultation</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <input type="date" id="date" class="form-control" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <textarea id="message" class="form-control" placeholder="Additional details about your project..."></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Booking Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-gray">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Trusted Across Kenya</h2>
+                <p>Don't just take our word for it. Here is what our clients have to say about our professional service delivery.</p>
+            </div>
+            
+            <div class="testimonials-slider reveal">
+                <!-- Card 1 -->
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Bidii Boreholes did an excellent job at our farm in Nakuru. They hit water exactly where the survey predicted. Highly professional team and great machinery."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">JM</div>
+                        <div class="client-details">
+                            <h4>James Mwangi</h4>
+                            <p>Commercial Farmer, Nakuru</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="testimonial-text">"Their transparent pricing and quick response time impressed us. The borehole was drilled, cased, and equipped within a week for our estate in Kiambu."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">SO</div>
+                        <div class="client-details">
+                            <h4>Sarah Omondi</h4>
+                            <p>Real Estate Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I contacted them for a hydrological survey in Machakos. The report was detailed and accepted by WRA instantly. They are a serious engineering company."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">DK</div>
+                        <div class="client-details">
+                            <h4>David Kiprono</h4>
+                            <p>Homeowner, Machakos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-padding" id="contact">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Get In Touch</h2>
+                <p>Visit our offices or contact us directly. We are always ready to deploy our teams to your site.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-cards reveal">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Our Office</h4>
+                            <p>Nairobi, along Garissa Road<br>(Near Ananas Mall), Kenya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <a href="tel:+254746145678">0746 145 678</a><br>
+                            <p style="font-size: 0.8rem; margin-top: 5px;">Mon-Sat, 8am - 6pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/254746145678" target="_blank">Chat with our engineers</a>
+                            <p style="font-size: 0.8rem; margin-top: 5px;">Fastest response</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container reveal">
+                    <!-- Placeholder map styling (Google Maps embed code would go here) -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15956.883909776267!2d37.0707!3d-1.0427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f4e5b27c66117%3A0xb6f8a7e126152c1b!2sAnanas%20Mall!5e0!3m2!1sen!2ske!4v1690000000000!5m2!1sen!2ske" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        <i class="fa-solid fa-droplet"></i> BIDII
+                    </a>
+                    <p>We are Kenya's premier borehole drilling and water solutions corporation. Engineering reliable water infrastructure for a better tomorrow.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#projects">Our Projects</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Borehole Drilling</a></li>
+                        <li><a href="#services">Hydrological Surveys</a></li>
+                        <li><a href="#services">Well Digging</a></li>
+                        <li><a href="#services">Water Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">NEMA Compliance</a></li>
+                        <li><a href="#">WRA Standards</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 BIDII BOREHOLE DRILLING & WATER SOLUTIONS. All Rights Reserved. Built for Engineering Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Elements -->
+    <a href="https://wa.me/254746145678?text=Hello+BIDII+BOREHOLE+DRILLING+%26+WATER+SOLUTIONS%2C+I+would+like+to+inquire+about+your+services." target="_blank" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    
+    <div class="back-to-top" id="backToTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- Success Modal Box (No Alert Dialogs) -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <i class="fa-solid fa-circle-check modal-icon"></i>
+            <h3>Request Received!</h3>
+            <p style="color: var(--text-gray); margin-top: 10px;">Thank you for contacting Bidii Boreholes. Our engineering team will review your request and get back to you shortly.</p>
+            <button class="modal-close" onclick="document.getElementById('successModal').classList.remove('active')">Close</button>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('active')">&times;</span>
+        <img id="lightbox-img" src="" alt="Project Image">
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Preloader Removal
+            window.addEventListener('load', () => {
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            });
+
+            // 2. Scroll Progress Bar & Back to top & Navbar Sticky
+            const scrollProgress = document.getElementById('scroll-progress');
+            const header = document.getElementById('header');
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                // Progress
+                const totalScroll = document.documentElement.scrollTop;
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scroll = `${totalScroll / windowHeight * 100}%`;
+                scrollProgress.style.width = scroll;
+                
+                // Navbar
+                if(window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Back to Top
+                if(window.scrollY > 500) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+                
+                // Update active nav links
+                updateActiveLink();
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 3. Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-btn');
+            const navLinks = document.getElementById('nav-links');
+            const navItems = navLinks.querySelectorAll('a');
+
+            mobileBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = mobileBtn.querySelector('i');
+                if(navLinks.classList.contains('active')) {
+                    icon.classList.replace('fa-bars', 'fa-xmark');
+                } else {
+                    icon.classList.replace('fa-xmark', 'fa-bars');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileBtn.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
+                });
+            });
+
+            // 4. Update Active Nav Link on Scroll
+            function updateActiveLink() {
+                let fromTop = window.scrollY + 100;
+                navItems.forEach(link => {
+                    let section = document.querySelector(link.hash);
+                    if (
+                        section &&
+                        section.offsetTop <= fromTop &&
+                        section.offsetTop + section.offsetHeight > fromTop
+                    ) {
+                        link.classList.add("active");
+                    } else {
+                        link.classList.remove("active");
+                    }
+                });
+            }
+
+            // 5. Scroll Reveal Animation (Intersection Observer)
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    
+                    // Trigger counters if it's the stats section
+                    if(entry.target.classList.contains('stat-item')) {
+                        const counter = entry.target.querySelector('.stat-number');
+                        startCounter(counter);
+                    }
+                    
+                    observer.unobserve(entry.target);
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+            });
+
+            // 6. Number Counter Animation
+            function startCounter(counter) {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+                
+                let current = 0;
+                const updateCounter = () => {
+                    current += increment;
+                    if(current < target) {
+                        counter.innerText = Math.ceil(current) + (target > 100 ? '+' : '');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = target + (target > 100 ? '+' : '');
+                    }
+                };
+                updateCounter();
+            }
+
+            // 7. Lightbox Gallery
+            const galleryImages = document.querySelectorAll('.gallery-img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            galleryImages.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.getAttribute('data-src');
+                    lightboxImg.src = imgSrc;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            // Close Lightbox on outside click
+            lightbox.addEventListener('click', (e) => {
+                if(e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+
+            // 8. Form Submission (Validation & Success Modal)
+            const bookingForm = document.getElementById('bookingForm');
+            const successModal = document.getElementById('successModal');
+
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Form is valid (HTML5 validation passed)
+                const submitBtn = bookingForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerText;
+                
+                // Simulate loading state
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+                submitBtn.style.opacity = '0.8';
+                
+                setTimeout(() => {
+                    // Show success modal
+                    successModal.classList.add('active');
+                    // Reset form
+                    bookingForm.reset();
+                    // Restore button
+                    submitBtn.innerText = originalText;
+                    submitBtn.style.opacity = '1';
+                }, 1500);
+            });
+            
+        });
+    </script>
+</body>
+</html>
